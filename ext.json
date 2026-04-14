@@ -5,5 +5,12 @@
   "area": "themes",
   "version": "1.0",
   "description": "A deep green dark theme for Standard Notes.",
-  "url": "https://github.com/lelandsanders/SN-theme-dark-green"
+  "url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green",
+  "dock_icon": {
+    "type": "circle",
+    "background_color": "#39e87b",
+    "foreground_color": "#081009",
+    "border_color": "#2db862"
+  },
+  "statusBar" : "dark-content"
 }
