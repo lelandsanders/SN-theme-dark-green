@@ -1,0 +1,18 @@
+{
+  "identifier": "com.leland.forest-dark",
+  "name": "Forest Dark",
+  "content_type": "SN|Theme",
+  "area": "themes",
+  "version": "1.0.0",
+  "description": "Deep green dark theme with bright green accents and blue secondaries.",
+  "url": "https://github.com/lelandsanders/SN-theme-dark-green/src/main.css",
+  "download_url": "https://github.com/lelandsanders/SN-theme-dark-green/src/SN-theme-dark-green.css",
+  "latest_url": "https://github.com/lelandsanders/SN-theme-dark-green/ext.json",
+  "statusBar": "dark-content",
+  "dock_icon": {
+    "type": "circle",
+    "background_color": "#39e87b",
+    "foreground_color": "#0c1510",
+    "border_color": "#39e87b"
+  }
+}
