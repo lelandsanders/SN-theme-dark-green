@@ -4,10 +4,9 @@
   "content_type": "SN|Theme",
   "area": "themes",
   "version": "1.0.0",
-  "description": "Deep green dark theme with bright green accents and blue secondaries.",
-  "url": "https://github.com/lelandsanders/SN-theme-dark-green/src/main.css",
-  "download_url": "https://github.com/lelandsanders/SN-theme-dark-green/src/SN-theme-dark-green.css",
-  "latest_url": "https://github.com/lelandsanders/SN-theme-dark-green/ext.json",
+  "description": "Deep green dark theme with bright green accents.",
+  "url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/src/forest-dark.css",
+  "latest_url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/ext.json",
   "statusBar": "dark-content",
   "dock_icon": {
     "type": "circle",
