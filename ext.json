@@ -7,6 +7,7 @@
   "description": "Deep green dark theme with bright green accents.",
   "url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/src/main.css",
   "latest_url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/ext.json",
+  "download_url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/src/main.css",
   "statusBar": "dark-content",
   "dock_icon": {
     "type": "circle",
