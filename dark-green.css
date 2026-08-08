@@ -1,0 +1,238 @@
+/*
+ * Dark Green — a dark forest-green theme for Standard Notes
+ * https://github.com/lelandsanders/SN-theme-dark-green
+ *
+ * Variable names verified against:
+ *   standardnotes/app  packages/styles/src/Styles/_colors.scss
+ *   standardnotes/app  packages/web/src/stylesheets/_theme.scss
+ *
+ * Notes on the passive scale:
+ *   passive-color-0 has the MOST contrast against the background,
+ *   passive-color-super-light has the LEAST. In a dark theme the ramp
+ *   therefore runs light -> dark, the reverse of the stock light theme.
+ *
+ * To recolor: edit only the palette block below. Everything after it
+ * is a reference, so one hex change propagates through the theme.
+ */
+
+:root {
+  /* ============================================================
+     1. PALETTE
+     Change colors here, not below. Everything downstream is a
+     reference, so one edit propagates through the whole theme.
+     ============================================================ */
+
+  /* Surfaces — green-tinted charcoal, not neutral grey */
+  --dg-bg-nav: #0d1712;      /* tag / navigation column (deepest)  */
+  --dg-bg: #101c16;          /* app + editor background            */
+  --dg-bg-raised: #16261e;   /* note list, search, tag chips       */
+  --dg-bg-hover: #1d3227;    /* hover state                        */
+  --dg-bg-active: #264636;   /* SELECTED row — deliberately light  */
+
+  /* Lines */
+  --dg-border: #1e3227;
+  --dg-border-strong: #2f4d3c;
+
+  /* Text */
+  --dg-fg: #e2efe6;          /* primary                            */
+  --dg-fg-muted: #a9c2b3;    /* secondary                          */
+  --dg-fg-dim: #7b9686;      /* counts, placeholders               */
+  --dg-on-accent: #06120c;   /* text sitting on a green fill       */
+
+  /* Greens */
+  --dg-mint: #a7e8c4;
+  --dg-moss: #74c69d;
+  --dg-fern: #52b788;        /* primary accent                     */
+  --dg-pine: #35845f;
+
+  /* Non-green accents, used sparingly */
+  --dg-amber: #e3b341;
+  --dg-rust: #e08a54;
+  --dg-berry: #e06c9f;
+  --dg-sky: #6fb3d2;
+  --dg-violet: #a98bd6;
+  --dg-red: #e5675f;
+
+  /* ============================================================
+     2. STYLEKIT CORE
+     ============================================================ */
+
+  --sn-stylekit-theme-type: dark;
+  --sn-stylekit-theme-name: dark-green;
+
+  --sn-stylekit-background-color: var(--dg-bg);
+  --sn-stylekit-foreground-color: var(--dg-fg);
+  --sn-stylekit-border-color: var(--dg-border);
+
+  --sn-stylekit-contrast-background-color: var(--dg-bg-raised);
+  --sn-stylekit-contrast-foreground-color: var(--dg-fg);
+  --sn-stylekit-contrast-border-color: var(--dg-border-strong);
+
+  --sn-stylekit-secondary-background-color: var(--dg-bg-nav);
+  --sn-stylekit-secondary-foreground-color: var(--dg-fg-muted);
+  --sn-stylekit-secondary-border-color: var(--dg-border);
+
+  --sn-stylekit-secondary-contrast-background-color: var(--dg-bg-hover);
+  --sn-stylekit-secondary-contrast-foreground-color: var(--dg-fg);
+  --sn-stylekit-secondary-contrast-border-color: var(--dg-border-strong);
+
+  --sn-stylekit-editor-background-color: var(--dg-bg);
+  --sn-stylekit-editor-foreground-color: var(--dg-fg);
+  --sn-stylekit-paragraph-text-color: var(--dg-fg);
+
+  --sn-stylekit-neutral-color: var(--dg-fg-dim);
+  --sn-stylekit-neutral-contrast-color: var(--dg-on-accent);
+
+  /* Info drives links, selection borders, and highlighted rows.
+     Green here is what makes the theme read as green. */
+  --sn-stylekit-info-color: var(--dg-fern);
+  --sn-stylekit-info-color-darkened: var(--dg-pine);
+  --sn-stylekit-info-contrast-color: var(--dg-on-accent);
+  --sn-stylekit-info-backdrop-color: rgba(82, 183, 136, 0.22);
+
+  --sn-stylekit-success-color: var(--dg-moss);
+  --sn-stylekit-success-contrast-color: var(--dg-on-accent);
+
+  --sn-stylekit-warning-color: var(--dg-amber);
+  --sn-stylekit-warning-contrast-color: var(--dg-on-accent);
+
+  --sn-stylekit-danger-color: var(--dg-red);
+  --sn-stylekit-danger-contrast-color: #ffffff;
+  --sn-stylekit-danger-light-color: #3a1f1e;
+
+  --sn-stylekit-shadow-color: #040705;
+
+  --sn-stylekit-input-placeholder-color: var(--dg-fg-dim);
+  --sn-stylekit-input-border-color: var(--dg-border-strong);
+
+  --sn-stylekit-scrollbar-thumb-color: var(--dg-pine);
+  --sn-stylekit-scrollbar-track-border-color: var(--dg-border);
+
+  /* ============================================================
+     3. PASSIVE SCALE (inverted for dark)
+     ============================================================ */
+
+  --sn-stylekit-passive-color-0: #cfe3d6;
+  --sn-stylekit-passive-color-1: #a9c2b3;
+  --sn-stylekit-passive-color-2: #78927f;
+  --sn-stylekit-passive-color-3: #41604d;
+  --sn-stylekit-passive-color-4: #26382d;
+  --sn-stylekit-passive-color-4-opacity-variant: rgba(116, 198, 157, 0.24);
+  --sn-stylekit-passive-color-5: #1a2b22;
+  --sn-stylekit-passive-color-6: #223529;
+  --sn-stylekit-passive-color-super-light: #16241c;
+
+  /* Legacy grey aliases — some older editors still read these */
+  --sn-stylekit-grey-1: var(--sn-stylekit-passive-color-1);
+  --sn-stylekit-grey-2: var(--sn-stylekit-passive-color-2);
+  --sn-stylekit-grey-3: var(--sn-stylekit-passive-color-3);
+  --sn-stylekit-grey-4: var(--sn-stylekit-passive-color-4);
+  --sn-stylekit-grey-4-opacity-variant: var(--sn-stylekit-passive-color-4-opacity-variant);
+  --sn-stylekit-grey-5: var(--sn-stylekit-passive-color-5);
+  --sn-stylekit-grey-6: var(--sn-stylekit-passive-color-6);
+
+  /* ============================================================
+     4. TAG COLORS
+     These are the swatches offered when you assign a color to a
+     tag. Green leads; the rest are spaced far apart in hue so
+     tags stay distinguishable at a glance.
+     ============================================================ */
+
+  --sn-stylekit-accessory-tint-color-1: var(--dg-fern);
+  --sn-stylekit-accessory-tint-color-2: var(--dg-berry);
+  --sn-stylekit-accessory-tint-color-3: var(--dg-amber);
+  --sn-stylekit-accessory-tint-color-4: var(--dg-violet);
+  --sn-stylekit-accessory-tint-color-5: var(--dg-sky);
+  --sn-stylekit-accessory-tint-color-6: var(--dg-rust);
+
+  /* ============================================================
+     5. APP OVERRIDES
+     ============================================================ */
+
+  --modal-background-color: var(--dg-bg-raised);
+
+  --editor-header-bar-background-color: var(--dg-bg);
+  --editor-background-color: var(--dg-bg);
+  --editor-foreground-color: var(--dg-fg);
+  --editor-title-bar-border-bottom-color: var(--dg-border);
+  --editor-title-input-color: var(--dg-fg);
+  --editor-pane-background-color: var(--dg-bg);
+  --editor-pane-editor-background-color: var(--dg-bg);
+  --editor-pane-editor-foreground-color: var(--dg-fg);
+  --editor-pane-component-stack-item-background-color: var(--dg-bg);
+
+  --text-selection-color: var(--dg-on-accent);
+  --text-selection-background-color: var(--dg-moss);
+
+  --note-preview-progress-color: var(--dg-fern);
+  --note-preview-progress-background-color: var(--sn-stylekit-passive-color-4-opacity-variant);
+  --note-preview-selected-progress-color: var(--dg-mint);
+  --note-preview-selected-progress-background-color: var(--sn-stylekit-passive-color-4-opacity-variant);
+
+  /* Note list */
+  --items-column-background-color: var(--dg-bg);
+  --items-column-items-background-color: var(--dg-bg);
+  --items-column-border-left-color: var(--dg-border);
+  --items-column-border-right-color: var(--dg-border);
+  --items-column-search-background-color: var(--dg-bg-raised);
+  --item-cell-selected-background-color: var(--dg-bg-hover);
+  --item-cell-selected-border-left-color: var(--dg-moss);
+
+  /* ---- Tag / navigation column ----
+     The selected row is the lightest surface in the theme on the
+     darkest background in the theme, which is what makes the
+     highlight readable in a long tag list. */
+  --navigation-column-background-color: var(--dg-bg-nav);
+  --navigation-section-title-color: var(--dg-moss);
+  --navigation-item-text-color: var(--dg-fg);
+  --navigation-item-count-color: var(--dg-fg-dim);
+  --navigation-item-selected-background-color: var(--dg-bg-active);
+
+  --preferences-background-color: var(--dg-bg);
+  --preferences-navigation-icon-color: var(--dg-moss);
+  --preferences-navigation-selected-background-color: var(--sn-stylekit-info-backdrop-color);
+
+  --dropdown-menu-radio-button-inactive-color: var(--dg-fg-dim);
+  --panel-resizer-background-color: var(--dg-border-strong);
+  --link-element-color: var(--dg-mint);
+  --normal-button-background-color: var(--dg-bg-raised);
+  --popover-background-color: var(--dg-bg-raised);
+  --popover-border-color: var(--dg-border-strong);
+  --separator-color: var(--dg-border);
+
+  /* Desktop app title bar */
+  --sn-desktop-titlebar-bg-color: var(--dg-bg-nav);
+  --sn-desktop-titlebar-border-color: var(--dg-border);
+  --sn-desktop-titlebar-ui-color: var(--dg-fg-muted);
+  --sn-desktop-titlebar-ui-hover-color: var(--dg-mint);
+
+  /* Component / editor iframes */
+  --sn-component-background-color: var(--dg-bg);
+  --sn-component-foreground-color: var(--dg-fg);
+  --sn-component-foreground-highlight-color: var(--dg-mint);
+  --sn-component-outer-border-color: var(--dg-border);
+  --sn-component-inner-border-color: var(--dg-border-strong);
+}
+
+/* ============================================================
+   6. EXTRAS
+   Plain CSS rather than variables. Safe to delete.
+   ============================================================ */
+
+::selection {
+  background-color: var(--dg-moss);
+  color: var(--dg-on-accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dg-pine);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dg-fern);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--dg-bg-nav);
+}
