@@ -1,0 +1,14 @@
+{
+  "name": "sn-theme-forest-dark",
+  "version": "1.0.0",
+  "description": "A dark forest-green theme for Standard Notes",
+  "license": "MIT",
+  "author": "Leland Sanders",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelandsanders/SN-theme-dark-green.git"
+  },
+  "sn": {
+    "main": "forest-dark.css"
+  }
+}

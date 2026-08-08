@@ -1,0 +1,235 @@
+/*
+ * Forest Dark — a dark forest-green theme for Standard Notes
+ * https://github.com/lelandsanders/SN-theme-dark-green
+ *
+ * Variable names verified against:
+ *   standardnotes/app  packages/styles/src/Styles/_colors.scss
+ *   standardnotes/app  packages/web/src/stylesheets/_theme.scss
+ *
+ * Notes on the passive scale:
+ *   passive-color-0 has the MOST contrast against the background,
+ *   passive-color-super-light has the LEAST. In a dark theme the ramp
+ *   therefore runs light -> dark, the reverse of the stock light theme.
+ */
+
+:root {
+  /* ============================================================
+     1. PALETTE
+     Change colors here, not below. Everything downstream is a
+     reference, so one edit propagates through the whole theme.
+     ============================================================ */
+
+  /* Surfaces — green-tinted charcoal, not neutral grey */
+  --forest-bg-nav: #0d1712;      /* tag / navigation column (deepest)  */
+  --forest-bg: #101c16;          /* app + editor background            */
+  --forest-bg-raised: #16261e;   /* note list, search, tag chips       */
+  --forest-bg-hover: #1d3227;    /* hover state                        */
+  --forest-bg-active: #264636;   /* SELECTED row — deliberately light  */
+
+  /* Lines */
+  --forest-border: #1e3227;
+  --forest-border-strong: #2f4d3c;
+
+  /* Text */
+  --forest-fg: #e2efe6;          /* primary                            */
+  --forest-fg-muted: #a9c2b3;    /* secondary                          */
+  --forest-fg-dim: #7b9686;      /* counts, placeholders               */
+  --forest-on-accent: #06120c;   /* text sitting on a green fill       */
+
+  /* Greens */
+  --forest-mint: #a7e8c4;
+  --forest-moss: #74c69d;
+  --forest-fern: #52b788;        /* primary accent                     */
+  --forest-pine: #35845f;
+
+  /* Non-green accents, used sparingly */
+  --forest-amber: #e3b341;
+  --forest-rust: #e08a54;
+  --forest-berry: #e06c9f;
+  --forest-sky: #6fb3d2;
+  --forest-violet: #a98bd6;
+  --forest-red: #e5675f;
+
+  /* ============================================================
+     2. STYLEKIT CORE
+     ============================================================ */
+
+  --sn-stylekit-theme-type: dark;
+  --sn-stylekit-theme-name: forest-dark;
+
+  --sn-stylekit-background-color: var(--forest-bg);
+  --sn-stylekit-foreground-color: var(--forest-fg);
+  --sn-stylekit-border-color: var(--forest-border);
+
+  --sn-stylekit-contrast-background-color: var(--forest-bg-raised);
+  --sn-stylekit-contrast-foreground-color: var(--forest-fg);
+  --sn-stylekit-contrast-border-color: var(--forest-border-strong);
+
+  --sn-stylekit-secondary-background-color: var(--forest-bg-nav);
+  --sn-stylekit-secondary-foreground-color: var(--forest-fg-muted);
+  --sn-stylekit-secondary-border-color: var(--forest-border);
+
+  --sn-stylekit-secondary-contrast-background-color: var(--forest-bg-hover);
+  --sn-stylekit-secondary-contrast-foreground-color: var(--forest-fg);
+  --sn-stylekit-secondary-contrast-border-color: var(--forest-border-strong);
+
+  --sn-stylekit-editor-background-color: var(--forest-bg);
+  --sn-stylekit-editor-foreground-color: var(--forest-fg);
+  --sn-stylekit-paragraph-text-color: var(--forest-fg);
+
+  --sn-stylekit-neutral-color: var(--forest-fg-dim);
+  --sn-stylekit-neutral-contrast-color: var(--forest-on-accent);
+
+  /* Info drives links, selection borders, and highlighted rows.
+     Green here is what makes the theme read as green. */
+  --sn-stylekit-info-color: var(--forest-fern);
+  --sn-stylekit-info-color-darkened: var(--forest-pine);
+  --sn-stylekit-info-contrast-color: var(--forest-on-accent);
+  --sn-stylekit-info-backdrop-color: rgba(82, 183, 136, 0.22);
+
+  --sn-stylekit-success-color: var(--forest-moss);
+  --sn-stylekit-success-contrast-color: var(--forest-on-accent);
+
+  --sn-stylekit-warning-color: var(--forest-amber);
+  --sn-stylekit-warning-contrast-color: var(--forest-on-accent);
+
+  --sn-stylekit-danger-color: var(--forest-red);
+  --sn-stylekit-danger-contrast-color: #ffffff;
+  --sn-stylekit-danger-light-color: #3a1f1e;
+
+  --sn-stylekit-shadow-color: #040705;
+
+  --sn-stylekit-input-placeholder-color: var(--forest-fg-dim);
+  --sn-stylekit-input-border-color: var(--forest-border-strong);
+
+  --sn-stylekit-scrollbar-thumb-color: var(--forest-pine);
+  --sn-stylekit-scrollbar-track-border-color: var(--forest-border);
+
+  /* ============================================================
+     3. PASSIVE SCALE (inverted for dark)
+     ============================================================ */
+
+  --sn-stylekit-passive-color-0: #cfe3d6;
+  --sn-stylekit-passive-color-1: #a9c2b3;
+  --sn-stylekit-passive-color-2: #78927f;
+  --sn-stylekit-passive-color-3: #41604d;
+  --sn-stylekit-passive-color-4: #26382d;
+  --sn-stylekit-passive-color-4-opacity-variant: rgba(116, 198, 157, 0.24);
+  --sn-stylekit-passive-color-5: #1a2b22;
+  --sn-stylekit-passive-color-6: #223529;
+  --sn-stylekit-passive-color-super-light: #16241c;
+
+  /* Legacy grey aliases — some older editors still read these */
+  --sn-stylekit-grey-1: var(--sn-stylekit-passive-color-1);
+  --sn-stylekit-grey-2: var(--sn-stylekit-passive-color-2);
+  --sn-stylekit-grey-3: var(--sn-stylekit-passive-color-3);
+  --sn-stylekit-grey-4: var(--sn-stylekit-passive-color-4);
+  --sn-stylekit-grey-4-opacity-variant: var(--sn-stylekit-passive-color-4-opacity-variant);
+  --sn-stylekit-grey-5: var(--sn-stylekit-passive-color-5);
+  --sn-stylekit-grey-6: var(--sn-stylekit-passive-color-6);
+
+  /* ============================================================
+     4. TAG COLORS
+     These are the swatches offered when you assign a color to a
+     tag. Green leads; the rest are spaced far apart in hue so
+     tags stay distinguishable at a glance.
+     ============================================================ */
+
+  --sn-stylekit-accessory-tint-color-1: var(--forest-fern);
+  --sn-stylekit-accessory-tint-color-2: var(--forest-berry);
+  --sn-stylekit-accessory-tint-color-3: var(--forest-amber);
+  --sn-stylekit-accessory-tint-color-4: var(--forest-violet);
+  --sn-stylekit-accessory-tint-color-5: var(--forest-sky);
+  --sn-stylekit-accessory-tint-color-6: var(--forest-rust);
+
+  /* ============================================================
+     5. APP OVERRIDES
+     ============================================================ */
+
+  --modal-background-color: var(--forest-bg-raised);
+
+  --editor-header-bar-background-color: var(--forest-bg);
+  --editor-background-color: var(--forest-bg);
+  --editor-foreground-color: var(--forest-fg);
+  --editor-title-bar-border-bottom-color: var(--forest-border);
+  --editor-title-input-color: var(--forest-fg);
+  --editor-pane-background-color: var(--forest-bg);
+  --editor-pane-editor-background-color: var(--forest-bg);
+  --editor-pane-editor-foreground-color: var(--forest-fg);
+  --editor-pane-component-stack-item-background-color: var(--forest-bg);
+
+  --text-selection-color: var(--forest-on-accent);
+  --text-selection-background-color: var(--forest-moss);
+
+  --note-preview-progress-color: var(--forest-fern);
+  --note-preview-progress-background-color: var(--sn-stylekit-passive-color-4-opacity-variant);
+  --note-preview-selected-progress-color: var(--forest-mint);
+  --note-preview-selected-progress-background-color: var(--sn-stylekit-passive-color-4-opacity-variant);
+
+  /* Note list */
+  --items-column-background-color: var(--forest-bg);
+  --items-column-items-background-color: var(--forest-bg);
+  --items-column-border-left-color: var(--forest-border);
+  --items-column-border-right-color: var(--forest-border);
+  --items-column-search-background-color: var(--forest-bg-raised);
+  --item-cell-selected-background-color: var(--forest-bg-hover);
+  --item-cell-selected-border-left-color: var(--forest-moss);
+
+  /* ---- Tag / navigation column ----
+     The selected row is the lightest surface in the theme on the
+     darkest background in the theme, which is what makes the
+     highlight readable in a long tag list. */
+  --navigation-column-background-color: var(--forest-bg-nav);
+  --navigation-section-title-color: var(--forest-moss);
+  --navigation-item-text-color: var(--forest-fg);
+  --navigation-item-count-color: var(--forest-fg-dim);
+  --navigation-item-selected-background-color: var(--forest-bg-active);
+
+  --preferences-background-color: var(--forest-bg);
+  --preferences-navigation-icon-color: var(--forest-moss);
+  --preferences-navigation-selected-background-color: var(--sn-stylekit-info-backdrop-color);
+
+  --dropdown-menu-radio-button-inactive-color: var(--forest-fg-dim);
+  --panel-resizer-background-color: var(--forest-border-strong);
+  --link-element-color: var(--forest-mint);
+  --normal-button-background-color: var(--forest-bg-raised);
+  --popover-background-color: var(--forest-bg-raised);
+  --popover-border-color: var(--forest-border-strong);
+  --separator-color: var(--forest-border);
+
+  /* Desktop app title bar */
+  --sn-desktop-titlebar-bg-color: var(--forest-bg-nav);
+  --sn-desktop-titlebar-border-color: var(--forest-border);
+  --sn-desktop-titlebar-ui-color: var(--forest-fg-muted);
+  --sn-desktop-titlebar-ui-hover-color: var(--forest-mint);
+
+  /* Component / editor iframes */
+  --sn-component-background-color: var(--forest-bg);
+  --sn-component-foreground-color: var(--forest-fg);
+  --sn-component-foreground-highlight-color: var(--forest-mint);
+  --sn-component-outer-border-color: var(--forest-border);
+  --sn-component-inner-border-color: var(--forest-border-strong);
+}
+
+/* ============================================================
+   6. EXTRAS
+   Plain CSS rather than variables. Safe to delete.
+   ============================================================ */
+
+::selection {
+  background-color: var(--forest-moss);
+  color: var(--forest-on-accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--forest-pine);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--forest-fern);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--forest-bg-nav);
+}

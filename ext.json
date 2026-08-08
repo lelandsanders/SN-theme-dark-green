@@ -1,17 +1,19 @@
 {
-  "identifier": "com.leland.forest-dark",
+  "identifier": "com.lelandsanders.forest-dark",
   "name": "Forest Dark",
   "content_type": "SN|Theme",
   "area": "themes",
-  "version": "1.0.2",
-  "description": "Deep green dark theme with bright green accents.",
-  "url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/src/main.css",
+  "version": "1.0.0",
+  "description": "A dark forest-green theme for Standard Notes. Deep green-tinted surfaces, high-contrast tag highlighting, and a moss-and-fern accent palette.",
+  "url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@v1.0.0/forest-dark.css",
   "latest_url": "https://cdn.jsdelivr.net/gh/lelandsanders/SN-theme-dark-green@main/ext.json",
-  "statusBar": "dark-content",
+  "download_url": "https://github.com/lelandsanders/SN-theme-dark-green/archive/refs/tags/v1.0.0.zip",
+  "marketing_url": "https://github.com/lelandsanders/SN-theme-dark-green",
   "dock_icon": {
     "type": "circle",
-    "background_color": "#39e87b",
-    "foreground_color": "#0c1510",
-    "border_color": "#39e87b"
-  }
+    "background_color": "#101c16",
+    "foreground_color": "#52b788",
+    "border_color": "#52b788"
+  },
+  "statusBar": "dark-content"
 }
